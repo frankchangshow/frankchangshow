@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Source_Sans_3 } from "next/font/google";
-import { Footer } from "./components/Footer";
-import { Navigation } from "./components/Navigation";
+import { DesignSwitcher } from "./components/DesignSwitcher";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -31,9 +30,8 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${sourceSans.variable} min-h-full antialiased`}
       >
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+        {children}
+        <DesignSwitcher />
       </body>
     </html>
   );

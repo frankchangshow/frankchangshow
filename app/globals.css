@@ -24,6 +24,7 @@ body {
 body {
   font-family: var(--font-sans), "Source Sans 3", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 5.5rem;
 }
 
 ::selection {
