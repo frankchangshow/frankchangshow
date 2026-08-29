@@ -2,60 +2,77 @@ import Link from "next/link";
 import { projects } from "@/lib/site";
 
 export default function Home() {
-  const crawl = [...projects, ...projects];
-
   return (
-    <div className="relative min-h-screen overflow-hidden pt-14 md:pt-16">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_0%,rgba(216,255,58,0.08),transparent_42%)]" />
-
-      <section className="relative flex min-h-[calc(100svh-3.5rem)] flex-col justify-between px-5 pb-8 md:min-h-[calc(100svh-4rem)] md:px-8">
-        <div className="flex items-start justify-between pt-8 font-mono text-[10px] tracking-[0.28em] uppercase text-mute md:text-[11px]">
-          <span className="rise">The show</span>
-          <span className="rise" style={{ animationDelay: "80ms" }}>
-            Belmont, CA
-          </span>
-        </div>
-
-        <div className="rise py-10" style={{ animationDelay: "120ms" }}>
-          <h1 className="font-display text-[22vw] leading-[0.78] tracking-[-0.04em] md:text-[13vw]">
-            Frank
-            <br />
-            <span className="italic text-signal">Chang</span>
+    <div>
+      <section className="bg-black px-5 py-24 text-center md:px-8 md:py-32">
+        <div className="rise mx-auto max-w-3xl">
+          <h1 className="font-display text-5xl font-bold leading-tight md:text-[60px]">
+            Frank <span className="mark">Chang</span>
           </h1>
-          <p className="mt-8 max-w-md font-mono text-[11px] leading-relaxed tracking-[0.08em] text-mute uppercase md:text-xs">
-            Browser games. Procedural worlds. No install.
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-mute">
+            Browser games. Procedural worlds. No install. Public work from
+            @frankchangshow.
           </p>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
               href="/work"
-              className="border border-ink bg-ink px-5 py-2.5 font-mono text-[11px] tracking-[0.22em] uppercase text-void transition-colors hover:bg-signal hover:border-signal"
+              className="bg-signal px-6 py-4 font-display text-sm font-bold tracking-[0.16em] text-white uppercase transition-opacity hover:opacity-85"
             >
               Open work
             </Link>
             <Link
               href="/watch"
-              className="border border-line px-5 py-2.5 font-mono text-[11px] tracking-[0.22em] uppercase text-ink transition-colors hover:border-signal hover:text-signal"
+              className="border border-white/20 px-6 py-4 font-display text-sm font-bold tracking-[0.16em] text-white uppercase transition-colors hover:border-signal hover:text-signal"
             >
               Watch
             </Link>
           </div>
         </div>
+      </section>
 
-        <div className="rise border-t border-line pt-4" style={{ animationDelay: "220ms" }}>
-          <p className="mb-3 font-mono text-[10px] tracking-[0.28em] uppercase text-mute">
-            Public repos
+      <section className="bg-panel px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-center text-sm font-medium tracking-[0.18em] text-mute uppercase">
+            Selected repos
           </p>
-          <div className="overflow-hidden">
-            <div className="marquee-track flex w-max gap-10 whitespace-nowrap">
-              {crawl.map((project, index) => (
-                <span
-                  key={`${project.title}-${index}`}
-                  className="font-display text-2xl italic md:text-3xl"
-                >
+          <h2 className="mt-3 text-center font-display text-4xl font-bold md:text-5xl">
+            Public <span className="mark">work</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-mute">
+            Titles and descriptions from GitHub. Open a card to read the repo.
+          </p>
+
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.slice(0, 6).map((project) => (
+              <a
+                key={project.href}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="flex h-40 items-end rounded-xl bg-void p-5">
+                  <span className="font-display text-xs font-bold tracking-[0.16em] text-signal uppercase">
+                    {project.stack}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-xl font-bold leading-snug group-hover:text-signal">
                   {project.title}
-                </span>
-              ))}
-            </div>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-mute">
+                  {project.description}
+                </p>
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/work"
+              className="inline-block bg-signal px-8 py-4 font-display text-sm font-bold tracking-[0.16em] text-white uppercase transition-opacity hover:opacity-85"
+            >
+              See all repos
+            </Link>
           </div>
         </div>
       </section>

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Montserrat, Source_Sans_3 } from "next/font/google";
 import { Footer } from "./components/Footer";
 import { Navigation } from "./components/Navigation";
 import "./globals.css";
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["400", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -29,9 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${instrument.variable} ${geistMono.variable} min-h-full antialiased`}
+        className={`${montserrat.variable} ${sourceSans.variable} min-h-full antialiased`}
       >
-        <div className="grain" aria-hidden />
         <Navigation />
         <main>{children}</main>
         <Footer />

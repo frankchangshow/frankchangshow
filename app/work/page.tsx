@@ -2,50 +2,42 @@ import { projects } from "@/lib/site";
 
 export default function Work() {
   return (
-    <div className="min-h-screen px-5 pt-28 pb-24 md:px-8 md:pt-36">
-      <div className="flex flex-col gap-4 border-b border-line pb-10 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p className="font-mono text-[11px] tracking-[0.28em] uppercase text-signal">
-            03 / Work
-          </p>
-          <h1 className="mt-4 font-display text-6xl leading-none tracking-[-0.03em] md:text-8xl">
-            Public
-            <br />
-            <span className="italic">repos</span>
-          </h1>
-        </div>
-        <p className="max-w-xs font-mono text-[11px] leading-relaxed tracking-[0.08em] text-mute uppercase">
-          Titles and descriptions from GitHub. Open a row to read the repo.
+    <div className="bg-panel px-5 py-20 md:px-8 md:py-28">
+      <div className="mx-auto max-w-6xl">
+        <p className="text-center text-sm font-medium tracking-[0.18em] text-mute uppercase">
+          Work
         </p>
-      </div>
+        <h1 className="mt-3 text-center font-display text-5xl font-bold md:text-[60px]">
+          Public <span className="mark">repos</span>
+        </h1>
+        <p className="mx-auto mt-5 max-w-xl text-center text-mute">
+          Titles and descriptions from GitHub. Open a card to read the repo.
+        </p>
 
-      <ol className="divide-y divide-line">
-        {projects.map((project, index) => (
-          <li key={project.href}>
+        <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
             <a
+              key={project.href}
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group grid gap-3 py-8 md:grid-cols-[4rem_minmax(0,1fr)_10rem] md:items-baseline md:gap-8 md:py-10"
+              className="group block"
             >
-              <span className="font-mono text-[11px] tracking-[0.2em] text-mute">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h2 className="font-display text-3xl leading-none tracking-[-0.02em] transition-colors group-hover:text-signal md:text-5xl">
-                  {project.title}
-                </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-mute md:text-base">
-                  {project.description}
-                </p>
+              <div className="flex h-44 items-end rounded-xl bg-void p-5">
+                <span className="font-display text-xs font-bold tracking-[0.16em] text-signal uppercase">
+                  {project.stack}
+                </span>
               </div>
-              <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-mute transition-colors group-hover:text-ink">
-                {project.stack}
-              </span>
+              <h2 className="mt-4 font-display text-2xl font-bold leading-snug group-hover:text-signal">
+                {project.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-mute">
+                {project.description}
+              </p>
             </a>
-          </li>
-        ))}
-      </ol>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

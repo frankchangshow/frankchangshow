@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/site";
+import { SocialIcons } from "./SocialIcons";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -22,13 +23,10 @@ export function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 right-0 left-0 z-40 border-b border-line/80 bg-void/70 backdrop-blur-md">
-        <div className="flex h-14 items-center justify-between px-5 md:h-16 md:px-8">
-          <Link
-            href="/"
-            className="font-mono text-[11px] tracking-[0.28em] uppercase"
-          >
-            FCS
+      <header className="sticky top-0 z-40 border-b border-line bg-void">
+        <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 md:px-8">
+          <Link href="/" className="font-display text-lg font-bold tracking-tight">
+            Frank Chang
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -36,10 +34,10 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-mono text-[11px] tracking-[0.22em] uppercase transition-colors ${
+                className={`relative pb-1 text-[15px] transition-colors ${
                   pathname === item.href
-                    ? "text-signal"
-                    : "text-mute hover:text-ink"
+                    ? "text-white after:absolute after:right-0 after:bottom-0 after:left-0 after:h-0.5 after:bg-signal"
+                    : "text-mute hover:text-signal"
                 }`}
               >
                 {item.label}
@@ -47,39 +45,39 @@ export function Navigation() {
             ))}
           </nav>
 
+          <div className="hidden md:block">
+            <SocialIcons />
+          </div>
+
           <button
             type="button"
-            className="font-mono text-[11px] tracking-[0.22em] uppercase text-mute md:hidden"
+            className="text-sm text-mute md:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
-            aria-controls="site-index"
           >
-            {open ? "Close" : "Index"}
+            {open ? "Close" : "Menu"}
           </button>
         </div>
       </header>
 
       {open ? (
-        <div
-          id="site-index"
-          className="fixed inset-0 z-30 flex flex-col justify-end bg-void px-5 pb-16 md:hidden"
-        >
-          <nav className="flex flex-col gap-2">
-            {nav.map((item, index) => (
+        <div className="fixed inset-0 z-30 bg-panel px-5 pt-24 md:hidden">
+          <nav className="flex flex-col gap-5">
+            {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-display text-6xl leading-none ${
-                  pathname === item.href ? "italic text-signal" : "text-ink"
+                className={`font-display text-3xl font-bold ${
+                  pathname === item.href ? "text-signal" : "text-white"
                 }`}
               >
-                <span className="mr-4 font-mono text-xs tracking-widest text-mute">
-                  0{index + 1}
-                </span>
                 {item.label}
               </Link>
             ))}
           </nav>
+          <div className="mt-10">
+            <SocialIcons />
+          </div>
         </div>
       ) : null}
     </>

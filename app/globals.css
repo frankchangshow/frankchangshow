@@ -1,53 +1,48 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-display: var(--font-instrument);
-  --font-mono: var(--font-geist-mono);
-  --color-ink: #efe6d4;
-  --color-mute: #8a8174;
-  --color-line: #2c2924;
-  --color-void: #0c0b09;
-  --color-signal: #d8ff3a;
+  --font-display: var(--font-montserrat);
+  --font-sans: var(--font-source);
+  --color-ink: #ffffff;
+  --color-mute: #c2c2c2;
+  --color-line: #2c3438;
+  --color-void: #1c2326;
+  --color-panel: #21282b;
+  --color-signal: #e12929;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  background: var(--color-void);
-}
-
+html,
 body {
   background: var(--color-void);
   color: var(--color-ink);
-  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+body {
+  font-family: var(--font-sans), "Source Sans 3", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background: var(--color-signal);
-  color: var(--color-void);
+  color: var(--color-ink);
 }
 
 .font-display {
-  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-family: var(--font-display), Montserrat, sans-serif;
 }
 
-.grain {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 80;
-  opacity: 0.16;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.mark {
+  color: var(--color-signal);
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(1.25rem);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -55,26 +50,12 @@ body {
   }
 }
 
-@keyframes crawl {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 .rise {
-  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.marquee-track {
-  animation: crawl 42s linear infinite;
+  animation: rise 0.7s ease both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise,
-  .marquee-track {
+  .rise {
     animation: none;
   }
 }
