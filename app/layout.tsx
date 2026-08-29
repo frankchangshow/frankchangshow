@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Navigation } from "./components/Navigation";
+import { Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Footer } from "./components/Footer";
+import { Navigation } from "./components/Navigation";
+import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Frank Chang",
-  description: "Browser-based games and interactive experiences",
+  description: "Frank Chang, Belmont, CA. @frankchangshow",
 };
 
 export default function RootLayout({
@@ -20,14 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
+    <html lang="en" className="h-full">
       <body
-        className={`${inter.variable} antialiased min-h-full flex flex-col bg-black text-white`}
+        className={`${instrument.variable} ${geistMono.variable} min-h-full antialiased`}
       >
+        <div className="grain" aria-hidden />
         <Navigation />
-        <main className="flex-1 pt-16">
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,42 +1,87 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { nav } from "@/lib/site";
 
 export function Navigation() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/work', label: 'Work' },
-    { href: '/watch', label: 'Watch' },
-  ];
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-lg font-semibold tracking-tight">
-            Frank Chang
+    <>
+      <header className="fixed top-0 right-0 left-0 z-40 border-b border-line/80 bg-void/70 backdrop-blur-md">
+        <div className="flex h-14 items-center justify-between px-5 md:h-16 md:px-8">
+          <Link
+            href="/"
+            className="font-mono text-[11px] tracking-[0.28em] uppercase"
+          >
+            FCS
           </Link>
-          <div className="flex gap-8">
-            {links.map((link) => (
+
+          <nav className="hidden items-center gap-8 md:flex">
+            {nav.map((item) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm transition-colors ${
-                  pathname === link.href
-                    ? 'text-white'
-                    : 'text-zinc-400 hover:text-white'
+                key={item.href}
+                href={item.href}
+                className={`font-mono text-[11px] tracking-[0.22em] uppercase transition-colors ${
+                  pathname === item.href
+                    ? "text-signal"
+                    : "text-mute hover:text-ink"
                 }`}
               >
-                {link.label}
+                {item.label}
               </Link>
             ))}
-          </div>
+          </nav>
+
+          <button
+            type="button"
+            className="font-mono text-[11px] tracking-[0.22em] uppercase text-mute md:hidden"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-controls="site-index"
+          >
+            {open ? "Close" : "Index"}
+          </button>
         </div>
-      </div>
-    </nav>
+      </header>
+
+      {open ? (
+        <div
+          id="site-index"
+          className="fixed inset-0 z-30 flex flex-col justify-end bg-void px-5 pb-16 md:hidden"
+        >
+          <nav className="flex flex-col gap-2">
+            {nav.map((item, index) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`font-display text-6xl leading-none ${
+                  pathname === item.href ? "italic text-signal" : "text-ink"
+                }`}
+              >
+                <span className="mr-4 font-mono text-xs tracking-widest text-mute">
+                  0{index + 1}
+                </span>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      ) : null}
+    </>
   );
 }

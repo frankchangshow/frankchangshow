@@ -1,44 +1,36 @@
 export default function About() {
   return (
-    <div className="min-h-screen bg-black">
-      <div className="mx-auto max-w-4xl px-6 py-24 lg:py-32">
-        <div className="animate-fade-in-up">
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            About
+    <article className="min-h-screen px-5 pt-28 pb-24 md:px-8 md:pt-36">
+      <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+        <div>
+          <p className="font-mono text-[11px] tracking-[0.28em] uppercase text-signal">
+            02 / About
+          </p>
+          <h1 className="mt-6 font-display text-6xl leading-none tracking-[-0.03em] md:text-8xl">
+            Frank
+            <br />
+            Chang
           </h1>
-          
-          <div className="mt-12 space-y-8 text-lg leading-relaxed text-zinc-300">
-            <p>
-              I build browser-based games and interactive experiences that push the boundaries of what&apos;s possible on the web.
-            </p>
-            
-            <p>
-              My work focuses on procedural generation, real-time graphics, and creating immersive worlds without relying on traditional art assets. From first-person shooters to racing simulators to space RTS games, everything runs directly in your browser with zero downloads.
-            </p>
-            
-            <p>
-              I work with Three.js, WebGPU, Babylon.js, and vanilla JavaScript to craft experiences that are immediate, accessible, and technically ambitious.
-            </p>
+        </div>
 
-            <div className="pt-8">
-              <h2 className="text-2xl font-semibold text-white">Technical Focus</h2>
-              <ul className="mt-4 space-y-2 text-zinc-400">
-                <li>• Procedural world generation and rendering</li>
-                <li>• Real-time 3D graphics in the browser</li>
-                <li>• Zero-asset game development</li>
-                <li>• WebGPU and custom shader programming</li>
-                <li>• Multiplayer networking architecture</li>
-              </ul>
-            </div>
-
-            <div className="pt-8">
-              <p className="text-base text-zinc-400">
-                Based in Belmont, CA
-              </p>
-            </div>
-          </div>
+        <div className="max-w-xl space-y-8 text-base leading-relaxed text-ink/90 md:text-lg">
+          <p className="font-display text-3xl leading-snug italic md:text-4xl">
+            I make games that run in a tab.
+          </p>
+          <p>
+            Procedural worlds. Real-time graphics. No art pipeline, no download,
+            no account. Shooters, racers, a space RTS. All of it opens in the
+            browser.
+          </p>
+          <p>
+            The public work lives on GitHub under frankchangshow. Three.js,
+            WebGPU, Babylon.js, and vanilla JavaScript.
+          </p>
+          <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-mute">
+            Belmont, CA
+          </p>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
