@@ -3,11 +3,18 @@ import {
   Fraunces,
   Gabarito,
   Instrument_Sans,
+  Libre_Franklin,
   Manrope,
   Nunito_Sans,
 } from "next/font/google";
 import "./designs.css";
 import { DesignSwitcher } from "./_components/DesignSwitcher";
+
+const libreFranklin = Libre_Franklin({
+  subsets: ["latin"],
+  variable: "--font-franklin",
+  style: ["normal", "italic"],
+});
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -38,7 +45,7 @@ const nunitoSans = Nunito_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Design directions · Frank Chang",
+    default: "Frank Chang",
     template: "%s · Frank Chang",
   },
   robots: { index: false, follow: false },
@@ -49,7 +56,7 @@ export default function DesignsLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div
-      className={`${fraunces.variable} ${instrumentSans.variable} ${manrope.variable} ${gabarito.variable} ${nunitoSans.variable} designs-root flex min-h-full flex-1 flex-col`}
+      className={`${libreFranklin.variable} ${fraunces.variable} ${instrumentSans.variable} ${manrope.variable} ${gabarito.variable} ${nunitoSans.variable} designs-root flex min-h-full flex-1 flex-col`}
     >
       {children}
       <DesignSwitcher />

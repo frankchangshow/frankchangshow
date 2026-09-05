@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { copy, site, socials, youtube } from "@/lib/site";
-import { SocialIcon } from "../_components/SocialIcon";
-import { laneHref, laneLinkProps } from "../_components/lanes";
+import { SocialIcon } from "@/app/designs/_components/SocialIcon";
+import { laneHref, laneLinkProps } from "@/app/designs/_components/lanes";
 import {
   HeroGraphic,
   IconArrow,
@@ -46,7 +46,7 @@ export default function DesignB() {
       {/* Nav */}
       <header className="sticky top-0 z-40 border-b border-(--rule) bg-(--bg)/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
-          <Link href="/designs/b" className="flex items-center gap-2.5 font-bold tracking-[-0.02em]">
+          <Link href="/designs/archive/b" className="flex items-center gap-2.5 font-bold tracking-[-0.02em]">
             <Monogram className="h-8 w-8" />
             <span>Frank Chang</span>
           </Link>
@@ -101,7 +101,7 @@ export default function DesignB() {
                 Watch on YouTube
               </a>
               <Link
-                href="/designs/b/exclusives"
+                href="/designs/archive/b/exclusives"
                 className="btn-ghost pill inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold"
               >
                 Read the Exclusives
@@ -242,7 +242,7 @@ export default function DesignB() {
           </ul>
         </div>
         <p className="mx-auto max-w-6xl px-5 pb-8 text-xs text-(--muted) sm:px-8">
-          © {year} Frank Chang · Design B of 3, draft
+          © {year} Frank Chang · Draft B, retired
         </p>
       </footer>
     </div>

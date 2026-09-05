@@ -13,26 +13,28 @@ export function DesignSwitcher() {
   );
 }
 
+// Only shown on the retired A/B/C archive routes. The live candidate at
+// /designs/photo renders without any preview chrome.
 function SwitcherBar() {
   const pathname = usePathname() ?? "";
   const searchParams = useSearchParams();
-  const match = pathname.match(/^\/designs\/([abc])(?:\/|$)/);
-  const current = match?.[1];
-  const design = designs.find((d) => d.id === current);
-
-  // `?shot=1` hides the preview chrome so screenshots show only the design.
+  const match = pathname.match(/^\/designs\/archive\/([abc])(?:\/|$)/);
+  if (!match) return null;
   if (searchParams.get("shot") === "1") return null;
+
+  const current = match[1];
+  const design = designs.find((d) => d.id === current);
 
   return (
     <nav
-      aria-label="Design preview switcher"
+      aria-label="Retired design switcher"
       className="design-switcher flex items-center gap-1 rounded-full border border-white/10 bg-[#141516]/92 p-1 text-[13px] text-white shadow-[0_10px_40px_-12px_rgba(0,0,0,0.5)] backdrop-blur"
     >
       <Link
-        href="/designs"
+        href="/designs/photo"
         className="rounded-full px-3 py-1.5 text-white/70 transition hover:bg-white/10 hover:text-white"
       >
-        All
+        Candidate
       </Link>
       <span className="h-4 w-px bg-white/15" aria-hidden />
       {designs.map((d) => {
@@ -40,9 +42,9 @@ function SwitcherBar() {
         return (
           <Link
             key={d.id}
-            href={`/designs/${d.id}`}
+            href={`/designs/archive/${d.id}`}
             aria-current={active ? "page" : undefined}
-            title={`${d.letter} · ${d.name}`}
+            title={`${d.letter} · ${d.name} (retired)`}
             className={
               "flex h-7 w-7 items-center justify-center rounded-full font-semibold transition " +
               (active
@@ -54,13 +56,9 @@ function SwitcherBar() {
           </Link>
         );
       })}
-      {design ? (
-        <span className="hidden pl-2 pr-3 text-white/60 sm:inline">
-          {design.name}
-        </span>
-      ) : (
-        <span className="pl-2 pr-3 text-white/60">Draft preview</span>
-      )}
+      <span className="hidden pl-2 pr-3 text-white/60 sm:inline">
+        Retired · {design?.name}
+      </span>
     </nav>
   );
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { copy, site, socials } from "@/lib/site";
-import { SocialIcon } from "../_components/SocialIcon";
-import { laneHref, laneLinkProps } from "../_components/lanes";
+import { SocialIcon } from "@/app/designs/_components/SocialIcon";
+import { laneHref, laneLinkProps } from "@/app/designs/_components/lanes";
 import {
   DeskScene,
   SpotCamera,
@@ -61,7 +61,7 @@ export default function DesignA() {
             </ul>
           </div>
           <div className="flex flex-col items-start justify-between gap-4 py-5 sm:flex-row sm:items-end">
-            <Link href="/designs/a" className="display text-3xl leading-none sm:text-4xl">
+            <Link href="/designs/archive/a" className="display text-3xl leading-none sm:text-4xl">
               Frank Chang
             </Link>
             <nav aria-label="Primary">
@@ -224,7 +224,7 @@ export default function DesignA() {
               ))}
             </ul>
           </div>
-          <p className="smallcaps mt-6">© {year} Frank Chang · Design A of 3, draft</p>
+          <p className="smallcaps mt-6">© {year} Frank Chang · Draft A, retired</p>
         </footer>
       </div>
     </div>

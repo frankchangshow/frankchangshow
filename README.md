@@ -11,7 +11,9 @@ Local development:
 npm install
 npm run dev
 
-Design directions (draft, noindex): open /designs for the picker, then
-/designs/a (Soft Editorial), /designs/b (Clean Modern Product), or
-/designs/c (Warm Living Room). Screenshots live in public/previews/.
-The public homepage at / is unchanged until a direction is picked.
+Homepage candidate (draft, noindex): /designs/photo. A portrait, a short
+bio, and links. Drop a 3:4 photo at public/photo/frank.jpg to fill the
+frame. Screenshots live in public/previews/photo.png and photo-mobile.png.
+The three earlier illustrated directions are retired and kept at
+/designs/archive/{a,b,c}. The public homepage at / is unchanged until a
+direction is picked.

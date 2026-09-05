@@ -24,6 +24,40 @@
   border-radius: 2px;
 }
 
+/* ---------- Candidate · Photo + short bio ---------- */
+.theme-photo {
+  --bg: #ffffff;
+  --ink: #161616;
+  --ink-2: #3d3d3d;
+  --muted: #6f6f6f;
+  --rule: #e6e6e6;
+  --frame: #f3f3f1;
+  --accent: #3a5a80;
+  --accent-ink: #3a5a80;
+  --font-body: var(--font-franklin), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-franklin), ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+}
+
+.theme-photo .display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.theme-photo .link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: #c4c4c4;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+.theme-photo .link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
 /* ---------- A · Soft Editorial ---------- */
 .theme-a {
   --bg: #f6f1e7;

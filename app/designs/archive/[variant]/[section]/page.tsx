@@ -50,7 +50,7 @@ export default async function SectionStub({
     <div className={`theme theme-${id} flex-1`}>
       <div className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-16">
         <Link
-          href={`/designs/${id}`}
+          href={`/designs/archive/${id}`}
           className="inline-flex items-center gap-2 text-sm text-(--muted) transition-colors hover:text-(--accent-ink)"
         >
           <span aria-hidden>←</span> Back to design {design.letter}

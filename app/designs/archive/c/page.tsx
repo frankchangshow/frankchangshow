@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { copy, site, socials, youtube } from "@/lib/site";
-import { SocialIcon } from "../_components/SocialIcon";
-import { laneHref, laneLinkProps } from "../_components/lanes";
+import { SocialIcon } from "@/app/designs/_components/SocialIcon";
+import { laneHref, laneLinkProps } from "@/app/designs/_components/lanes";
 import {
   LivingRoom,
   SpotBooks,
@@ -41,7 +41,7 @@ export default function DesignC() {
       <section className="bg-(--bg-2)">
         <div className="mx-auto max-w-6xl px-5 pt-5 sm:px-8">
           <header className="cushion flex items-center justify-between gap-4 px-4 py-3 sm:px-5">
-            <Link href="/designs/c" className="display flex items-center gap-2.5 text-lg">
+            <Link href="/designs/archive/c" className="display flex items-center gap-2.5 text-lg">
               <SunMark className="h-7 w-7" />
               Frank Chang
             </Link>
@@ -90,7 +90,7 @@ export default function DesignC() {
                   Watch on YouTube
                 </a>
                 <Link
-                  href="/designs/c/exclusives"
+                  href="/designs/archive/c/exclusives"
                   className="btn-olive inline-flex items-center gap-2 px-5 py-3 text-sm font-bold"
                 >
                   Read the Exclusives
@@ -231,7 +231,7 @@ export default function DesignC() {
           </ul>
         </div>
         <p className="mx-auto max-w-6xl px-5 pb-8 text-xs text-(--muted) sm:px-8">
-          © {year} Frank Chang · Design C of 3, draft
+          © {year} Frank Chang · Draft C, retired
         </p>
       </footer>
     </div>
