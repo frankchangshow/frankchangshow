@@ -153,7 +153,7 @@ export function TwoMugs({ className = "" }: Props) {
       role="img"
       aria-label="Two illustrated mugs on a small table, steam rising."
     >
-      <ellipse cx="160" cy="150" rx="140" ry="12" fill="#5b6a3c" />
+      <ellipse cx="160" cy="150" rx="140" ry="12" fill="#4a5730" />
       <rect x="40" y="132" width="240" height="14" rx="7" fill="#fbf3e8" />
       <rect x="88" y="80" width="54" height="52" rx="12" fill={c.terracotta} />
       <path d="M142 94c20 0 20 26 0 26" fill="none" stroke={c.terracotta} strokeWidth="7" strokeLinecap="round" />

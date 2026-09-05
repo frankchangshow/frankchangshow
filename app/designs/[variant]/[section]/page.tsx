@@ -51,12 +51,12 @@ export default async function SectionStub({
       <div className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-16">
         <Link
           href={`/designs/${id}`}
-          className="inline-flex items-center gap-2 text-sm text-(--muted) transition-colors hover:text-(--accent)"
+          className="inline-flex items-center gap-2 text-sm text-(--muted) transition-colors hover:text-(--accent-ink)"
         >
           <span aria-hidden>←</span> Back to design {design.letter}
         </Link>
 
-        <p className="mt-10 text-xs font-semibold uppercase tracking-[0.16em] text-(--accent)">
+        <p className="mt-10 text-xs font-semibold uppercase tracking-[0.16em] text-(--accent-ink)">
           {meta.kicker}
         </p>
         <h1 className={`${displayClass} mt-3 text-4xl sm:text-5xl`}>{meta.title}</h1>

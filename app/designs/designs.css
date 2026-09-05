@@ -30,9 +30,10 @@
   --bg-2: #efe7d8;
   --ink: #1f1d1a;
   --ink-2: #4a4640;
-  --muted: #7a746b;
+  --muted: #6b655c;
   --rule: #d9cfbd;
   --accent: #d95d45;
+  --accent-ink: #bf4530;
   --accent-2: #d9a441;
   --font-body: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
@@ -90,7 +91,7 @@
   transition: color 0.15s ease;
 }
 .theme-a .link-ink:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* ---------- B · Clean Modern Product ---------- */
@@ -99,9 +100,10 @@
   --bg-2: #ffffff;
   --ink: #17292b;
   --ink-2: #3c5052;
-  --muted: #62787a;
+  --muted: #53696b;
   --rule: #dfe7e7;
   --accent: #0e5e5b;
+  --accent-ink: #0e5e5b;
   --accent-2: #cde7e2;
   --accent-3: #e9f3f1;
   --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
@@ -160,10 +162,12 @@
   --bg-3: #fbf3e8;
   --ink: #42322b;
   --ink-2: #5f4b41;
-  --muted: #86705f;
+  --muted: #6e5a4a;
   --rule: #e6d3b8;
   --accent: #c8694a;
+  --accent-ink: #b1553a;
   --accent-2: #6c7a46;
+  --accent-2-ink: #5b6a3c;
   --accent-3: #e8b04b;
   --font-body: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-gabarito), ui-sans-serif, system-ui, sans-serif;
@@ -188,13 +192,13 @@
 }
 
 .theme-c .btn-warm {
-  background: var(--accent);
+  background: var(--accent-ink);
   color: #fff8f1;
   border-radius: 999px;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 .theme-c .btn-warm:hover {
-  background: #b25a3e;
+  background: #9e4a31;
   transform: translateY(-1px);
 }
 
@@ -206,7 +210,7 @@
   transition: background 0.15s ease, color 0.15s ease;
 }
 .theme-c .btn-olive:hover {
-  background: var(--accent-2);
+  background: var(--accent-2-ink);
   color: #fbf3e8;
 }
 

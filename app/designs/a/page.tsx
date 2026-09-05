@@ -52,7 +52,7 @@ export default function DesignA() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="text-(--ink-2) transition-colors hover:text-(--accent)"
+                    className="text-(--ink-2) transition-colors hover:text-(--accent-ink)"
                   >
                     <SocialIcon id={s.id} className="h-4 w-4" />
                   </a>
@@ -97,7 +97,7 @@ export default function DesignA() {
                 href={copy.lanes[0].href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="display inline-flex items-center gap-2 text-xl underline decoration-(--accent) decoration-2 underline-offset-[6px] transition-colors hover:text-(--accent)"
+                className="display inline-flex items-center gap-2 text-xl underline decoration-(--accent) decoration-2 underline-offset-[6px] transition-colors hover:text-(--accent-ink)"
               >
                 Watch the latest
                 <span aria-hidden>→</span>
@@ -187,7 +187,7 @@ export default function DesignA() {
                   href={copy.coaching.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-(--ink) px-5 py-2.5 text-sm font-medium text-(--bg) transition-colors hover:bg-(--accent)"
+                  className="inline-flex items-center gap-2 rounded-full bg-(--ink) px-5 py-2.5 text-sm font-medium text-(--bg) transition-colors hover:bg-(--accent-ink)"
                 >
                   <SocialIcon id="x" className="h-3.5 w-3.5" />
                   {copy.coaching.cta}

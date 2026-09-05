@@ -51,7 +51,7 @@ export default function DesignC() {
                   <li key={item.href}>
                     <a
                       href={item.href}
-                      className="rounded-full px-3.5 py-2 transition-colors hover:bg-(--bg-2) hover:text-(--accent)"
+                      className="rounded-full px-3.5 py-2 transition-colors hover:bg-(--bg-2) hover:text-(--accent-ink)"
                     >
                       {item.label}
                     </a>
@@ -72,7 +72,7 @@ export default function DesignC() {
 
           <div className="grid items-center gap-10 py-14 md:grid-cols-12 md:py-20">
             <div className="md:col-span-6">
-              <span className="tag bg-(--accent-2) text-(--bg-3)">{site.location}</span>
+              <span className="tag bg-(--accent-2-ink) text-(--bg-3)">{site.location}</span>
               <h1 className="display mt-6 text-[2.9rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem]">
                 Come on in.
                 <br />
@@ -104,7 +104,7 @@ export default function DesignC() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="inline-flex items-center gap-1.5 transition-colors hover:text-(--accent)"
+                      className="inline-flex items-center gap-1.5 transition-colors hover:text-(--accent-ink)"
                     >
                       <SocialIcon id={s.id} className="h-3.5 w-3.5" />
                       {s.name}
@@ -126,7 +126,7 @@ export default function DesignC() {
         <section id="about" className="py-10 md:py-14">
           <div className="grid gap-8 md:grid-cols-12 md:items-start">
             <div className="cushion p-7 sm:p-10 md:col-span-8">
-              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-(--accent-2)">About</p>
+              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-(--accent-2-ink)">About</p>
               <h2 className="display mt-2 text-3xl sm:text-4xl">Who&apos;s home.</h2>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-(--ink-2)">
                 {copy.about.map((para, i) => (
@@ -148,7 +148,7 @@ export default function DesignC() {
         {/* Around here */}
         <section id="around" className="py-10 md:py-14">
           <div className="mb-8 max-w-xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-(--accent-2)">Around here</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-(--accent-2-ink)">Around here</p>
             <h2 className="display mt-2 text-3xl sm:text-4xl">Four corners of the room.</h2>
           </div>
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -164,7 +164,7 @@ export default function DesignC() {
                     <Spot className="h-24 w-24 transition-transform group-hover:rotate-3" />
                     <h3 className="display mt-4 text-2xl">{lane.title}</h3>
                     <p className="mt-2 flex-1 leading-relaxed text-(--ink-2)">{lane.body}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-extrabold text-(--accent)">
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-extrabold text-(--accent-ink)">
                       {lane.cta}
                       <span aria-hidden>{lane.external ? "↗" : "→"}</span>
                     </span>
@@ -177,13 +177,13 @@ export default function DesignC() {
       </main>
 
       {/* Soft coaching lane on olive */}
-      <section id="hello" className="mt-10 bg-(--accent-2) text-(--bg-3)">
+      <section id="hello" className="mt-10 bg-(--accent-2-ink) text-(--bg-3)">
         <Wave className="block h-10 w-full sm:h-14" flip />
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-6 sm:px-8 md:grid-cols-12">
           <div className="md:col-span-7">
-            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-(--accent-3)">Say hi</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-(--bg-2)">Say hi</p>
             <h2 className="display mt-2 text-3xl sm:text-4xl">{copy.coaching.title}</h2>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-(--bg-3)/85">{copy.coaching.body}</p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-(--bg-3)/92">{copy.coaching.body}</p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <a
                 href={copy.coaching.href}
@@ -194,7 +194,7 @@ export default function DesignC() {
                 <SocialIcon id="x" className="h-4 w-4" />
                 {copy.coaching.cta}
               </a>
-              <span className="text-sm text-(--bg-3)/75">Or Instagram, if that&apos;s where you are.</span>
+              <span className="text-sm text-(--bg-3)/90">Or Instagram, if that&apos;s where you are.</span>
             </div>
           </div>
           <div className="md:col-span-5">
@@ -221,7 +221,7 @@ export default function DesignC() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="inline-flex items-center gap-2 rounded-full bg-(--bg-3) px-3.5 py-2 text-sm font-bold text-(--ink-2) transition hover:text-(--accent)"
+                  className="inline-flex items-center gap-2 rounded-full bg-(--bg-3) px-3.5 py-2 text-sm font-bold text-(--ink-2) transition hover:text-(--accent-ink)"
                 >
                   <SocialIcon id={s.id} className="h-3.5 w-3.5" />
                   {s.name}
