@@ -1,26 +1,212 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --radius-card: var(--radius-card);
+  --radius-btn: var(--radius-btn);
+  --radius-field: var(--radius-field);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---------------------------------------------------------------------------
+   Brand directions. Each variant sets the complete token set so components
+   stay identical and only the tokens (and a few structural choices) change.
+   --------------------------------------------------------------------------- */
+
+[data-theme="ivory"] {
+  color-scheme: light;
+  --canvas: #f6f1e8;
+  --surface: #fbf8f2;
+  --surface-2: #ece5d8;
+  --ink: #1b1813;
+  --muted: #6d655a;
+  --line: #ddd4c4;
+  --accent: #8a5a2b;
+  --accent-fg: #fbf8f2;
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+  --radius-card: 2px;
+  --radius-btn: 2px;
+  --radius-field: 2px;
+  --display-weight: 400;
+  --display-tracking: -0.02em;
+}
+
+[data-theme="forest"] {
+  color-scheme: dark;
+  --canvas: #0f1a15;
+  --surface: #162419;
+  --surface-2: #1d2f24;
+  --ink: #eee7d7;
+  --muted: #a4ae9e;
+  --line: #29392f;
+  --accent: #d2b073;
+  --accent-fg: #0f1a15;
+  --font-display: var(--font-instrument);
+  --font-body: var(--font-manrope);
+  --radius-card: 14px;
+  --radius-btn: 999px;
+  --radius-field: 10px;
+  --display-weight: 400;
+  --display-tracking: -0.01em;
+}
+
+[data-theme="slate"] {
+  color-scheme: light;
+  --canvas: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #e9ebef;
+  --ink: #0e1320;
+  --muted: #5c6472;
+  --line: #e1e4ea;
+  --accent: #2b4bee;
+  --accent-fg: #ffffff;
+  --font-display: var(--font-geist-sans);
+  --font-body: var(--font-geist-sans);
+  --radius-card: 20px;
+  --radius-btn: 999px;
+  --radius-field: 12px;
+  --display-weight: 600;
+  --display-tracking: -0.035em;
+}
+
+/* Root picker page: neutral, no variant */
+:root {
+  --canvas: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f0f0f0;
+  --ink: #111111;
+  --muted: #666666;
+  --line: #e6e6e6;
+  --accent: #111111;
+  --accent-fg: #ffffff;
+  --font-display: var(--font-geist-sans);
+  --font-body: var(--font-geist-sans);
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-field: 8px;
+  --display-weight: 600;
+  --display-tracking: -0.03em;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.theme-root {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  text-wrap: balance;
+}
+
+[data-theme="ivory"] .display {
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+
+[data-theme="forest"] .display em,
+[data-theme="ivory"] .display em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+[data-theme="slate"] .display em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+[data-theme="forest"] .eyebrow {
+  color: var(--accent);
+}
+
+.measure {
+  max-width: 62ch;
+}
+
+/* Soft ambient glow for the Forest direction */
+[data-theme="forest"] .hero-glow {
+  background:
+    radial-gradient(60% 50% at 70% 20%, rgba(210, 176, 115, 0.14), transparent 70%),
+    radial-gradient(40% 40% at 10% 80%, rgba(120, 160, 130, 0.12), transparent 70%);
+}
+
+[data-theme="slate"] .hero-glow {
+  background:
+    radial-gradient(50% 45% at 85% 10%, rgba(43, 75, 238, 0.09), transparent 70%);
+}
+
+/* Fine paper grain for Ivory */
+[data-theme="ivory"].theme-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.theme-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Reveal on scroll (progressive enhancement, no JS required) */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .rise-delay-1 { animation-delay: 0.08s; }
+  .rise-delay-2 { animation-delay: 0.16s; }
+  .rise-delay-3 { animation-delay: 0.24s; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+input, textarea {
+  font: inherit;
+}
+
+input:focus-visible, textarea:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
