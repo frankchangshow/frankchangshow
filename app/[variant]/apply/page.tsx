@@ -40,7 +40,7 @@ export default function ApplyPage() {
             </p>
           </div>
 
-          <div className="rise rise-delay-1 rounded-card border border-line bg-surface p-6 sm:p-10">
+          <div className="rise rise-delay-1 self-start rounded-card border border-line bg-surface p-6 sm:p-10">
             <ApplyForm />
           </div>
         </div>
