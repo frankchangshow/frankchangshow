@@ -1,0 +1,283 @@
+/* Shared chrome for the /designs preview area. Each design sets its own
+   tokens on a wrapper so the same section components can borrow them. */
+
+.designs-root {
+  color-scheme: light;
+}
+
+.theme {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.theme a:focus-visible,
+.theme button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Candidate · Photo + short bio ---------- */
+.theme-photo {
+  --bg: #ffffff;
+  --ink: #161616;
+  --ink-2: #3d3d3d;
+  --muted: #6f6f6f;
+  --rule: #e6e6e6;
+  --frame: #f3f3f1;
+  --accent: #3a5a80;
+  --accent-ink: #3a5a80;
+  --font-body: var(--font-franklin), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-franklin), ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+}
+
+.theme-photo .display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.theme-photo .link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: #c4c4c4;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+.theme-photo .link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* ---------- A · Soft Editorial ---------- */
+.theme-a {
+  --bg: #f6f1e7;
+  --bg-2: #efe7d8;
+  --ink: #1f1d1a;
+  --ink-2: #4a4640;
+  --muted: #6b655c;
+  --rule: #d9cfbd;
+  --accent: #d95d45;
+  --accent-ink: #bf4530;
+  --accent-2: #d9a441;
+  --font-body: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+}
+
+.theme-a .display {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 144, "SOFT" 40, "WONK" 1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.theme-a .display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+  font-weight: 400;
+}
+
+.theme-a .smallcaps {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.theme-a .rule {
+  border-color: var(--rule);
+}
+
+.theme-a .drop::first-letter {
+  font-family: var(--font-display);
+  font-weight: 500;
+  float: left;
+  font-size: 3.6rem;
+  line-height: 0.85;
+  padding: 0.25rem 0.6rem 0 0;
+  color: var(--accent);
+}
+
+.theme-a .paper {
+  background-image: radial-gradient(
+      rgba(31, 29, 26, 0.035) 0.6px,
+      transparent 0.6px
+    );
+  background-size: 4px 4px;
+}
+
+.theme-a .link-ink {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease;
+}
+.theme-a .link-ink:hover {
+  color: var(--accent-ink);
+}
+
+/* ---------- B · Clean Modern Product ---------- */
+.theme-b {
+  --bg: #f3f6f6;
+  --bg-2: #ffffff;
+  --ink: #17292b;
+  --ink-2: #3c5052;
+  --muted: #53696b;
+  --rule: #dfe7e7;
+  --accent: #0e5e5b;
+  --accent-ink: #0e5e5b;
+  --accent-2: #cde7e2;
+  --accent-3: #e9f3f1;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+.theme-b .display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+.theme-b .card {
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 1.5rem;
+  box-shadow:
+    0 1px 2px rgba(23, 41, 43, 0.04),
+    0 12px 32px -20px rgba(23, 41, 43, 0.18);
+}
+
+.theme-b .pill {
+  border-radius: 999px;
+}
+
+.theme-b .btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.theme-b .btn-primary:hover {
+  background: #0b4c4a;
+  transform: translateY(-1px);
+}
+
+.theme-b .btn-ghost {
+  background: var(--bg-2);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.theme-b .btn-ghost:hover {
+  border-color: var(--accent);
+  background: var(--accent-3);
+}
+
+.theme-b .grid-dots {
+  background-image: radial-gradient(var(--rule) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ---------- C · Warm Living Room ---------- */
+.theme-c {
+  --bg: #f3e7d3;
+  --bg-2: #f7d8c2;
+  --bg-3: #fbf3e8;
+  --ink: #42322b;
+  --ink-2: #5f4b41;
+  --muted: #6e5a4a;
+  --rule: #e6d3b8;
+  --accent: #c8694a;
+  --accent-ink: #b1553a;
+  --accent-2: #6c7a46;
+  --accent-2-ink: #5b6a3c;
+  --accent-3: #e8b04b;
+  --font-body: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-gabarito), ui-sans-serif, system-ui, sans-serif;
+}
+
+.theme-c .display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.theme-c .blob {
+  border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%;
+}
+
+.theme-c .cushion {
+  background: var(--bg-3);
+  border-radius: 1.75rem;
+  box-shadow:
+    0 2px 0 rgba(66, 50, 43, 0.06),
+    0 18px 40px -28px rgba(66, 50, 43, 0.35);
+}
+
+.theme-c .btn-warm {
+  background: var(--accent-ink);
+  color: #fff8f1;
+  border-radius: 999px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.theme-c .btn-warm:hover {
+  background: #9e4a31;
+  transform: translateY(-1px);
+}
+
+.theme-c .btn-olive {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--accent-2);
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.theme-c .btn-olive:hover {
+  background: var(--accent-2-ink);
+  color: #fbf3e8;
+}
+
+.theme-c .tag {
+  display: inline-block;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+}
+
+/* ---------- Preview chrome ---------- */
+.design-switcher {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 50;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media print {
+  .design-switcher {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
