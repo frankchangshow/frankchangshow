@@ -5,7 +5,7 @@ import { findPortrait, Portrait } from "./Portrait";
 
 export const metadata: Metadata = {
   title: "Frank Chang",
-  description: "Frank Chang. Belmont, California.",
+  description: "Frank Chang.",
 };
 
 const bio = [
@@ -34,7 +34,6 @@ export default function PhotoCandidate() {
 
           <div className="md:pt-2">
             <h1 className="display text-4xl leading-none sm:text-5xl">{site.name}</h1>
-            <p className="mt-3 text-(--muted)">{site.location}</p>
 
             <div className="mt-8 max-w-[34rem] space-y-4 text-[1.125rem] leading-8 text-(--ink-2)">
               <p>{bio[0]}</p>

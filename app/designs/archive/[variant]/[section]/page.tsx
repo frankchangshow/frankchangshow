@@ -88,7 +88,7 @@ export default async function SectionStub({
         </div>
 
         <p className="mt-10 text-sm text-(--muted)">
-          {site.name} · {site.shortLocation}
+          {site.name}
         </p>
       </div>
     </div>

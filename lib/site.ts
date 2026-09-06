@@ -1,8 +1,6 @@
 export const site = {
   name: "Frank Chang",
   handle: "frankchangshow",
-  location: "Belmont, California",
-  shortLocation: "Belmont, CA",
   url: "https://frankchangshow.com",
 } as const;
 
@@ -49,7 +47,7 @@ export const copy = {
   intro:
     "I make videos, write the occasional long-form piece, and keep a public weekday money dashboard. This is my home on the internet.",
   about: [
-    "Dad in Belmont. I like building things and explaining them plainly.",
+    "I like building things and explaining them plainly.",
     "Most of what I share is the process, not the highlight reel. If it worked, I show it. If it didn't, I show that too.",
     "You'll find me on YouTube most often. The site is where the longer pieces and the numbers live.",
   ],
@@ -57,7 +55,7 @@ export const copy = {
     {
       id: "watch",
       title: "Watch",
-      body: "Videos about building things, money in the open, and life on the Peninsula.",
+      body: "Videos about building things and money in the open.",
       cta: "YouTube channel",
       href: youtube.href,
       external: true,
@@ -93,7 +91,7 @@ export const copy = {
     cta: "Say hi on X",
     href: x.href,
   },
-  footer: "Made in Belmont, California.",
+  footer: "@frankchangshow",
 } as const;
 
 export type Lane = (typeof copy.lanes)[number];

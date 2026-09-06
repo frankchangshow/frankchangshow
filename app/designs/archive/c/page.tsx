@@ -72,7 +72,7 @@ export default function DesignC() {
 
           <div className="grid items-center gap-10 py-14 md:grid-cols-12 md:py-20">
             <div className="md:col-span-6">
-              <span className="tag bg-(--accent-2-ink) text-(--bg-3)">{site.location}</span>
+              <span className="tag bg-(--accent-2-ink) text-(--bg-3)">@{site.handle}</span>
               <h1 className="display mt-6 text-[2.9rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem]">
                 Come on in.
                 <br />

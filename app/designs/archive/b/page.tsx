@@ -12,7 +12,6 @@ import {
   IconDashboard,
   IconExternal,
   IconHome,
-  IconPin,
   IconPlay,
   IconWrench,
   Monogram,
@@ -81,8 +80,7 @@ export default function DesignB() {
         <section className="grid items-center gap-12 py-14 md:grid-cols-12 md:py-24">
           <div className="md:col-span-6">
             <span className="pill inline-flex items-center gap-1.5 bg-(--accent-2) px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-(--accent)">
-              <IconPin className="h-3.5 w-3.5" />
-              {site.location}
+              @{site.handle}
             </span>
             <h1 className="display mt-6 text-[2.75rem] leading-[1.02] sm:text-6xl">
               Hi, I&apos;m Frank.

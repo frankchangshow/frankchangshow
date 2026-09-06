@@ -40,7 +40,7 @@ export default function DesignA() {
         {/* Masthead */}
         <header className="pt-6">
           <div className="rule flex items-center justify-between border-b pb-3 text-[13px]">
-            <span className="smallcaps">{site.location}</span>
+            <span className="smallcaps">@{site.handle}</span>
             <span className="smallcaps hidden sm:inline">
               A personal site · No. 1
             </span>
@@ -85,7 +85,7 @@ export default function DesignA() {
           <div className="md:col-span-7">
             <p className="smallcaps mb-5">Hi, I&apos;m Frank · @{site.handle}</p>
             <h1 className="display text-[2.75rem] leading-[1.02] sm:text-6xl lg:text-[4.5rem]">
-              A dad in Belmont who{" "}
+              Someone who{" "}
               <span className="display-italic text-(--accent)">makes things</span>{" "}
               and explains them plainly.
             </h1>
