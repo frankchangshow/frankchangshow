@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murder Mystery 2 X</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%23181614' width='16' height='16'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="view"></canvas>
+      <div id="hud" hidden>
+        <div class="panel role-panel">
+          <div id="role">Your role</div>
+          <p id="hint">The murderer is unknown. Watch who attacks.</p>
+        </div>
+        <canvas id="minimap" width="168" height="168" aria-label="Map of the estate"></canvas>
+        <div id="down-banner" hidden>You are down. Watch the grounds.</div>
+        <div id="crosshair"></div>
+        <div class="bottom">
+          <div id="hearts" aria-label="Lives"></div>
+          <div class="abilities">
+            <div id="attack">Attack</div>
+            <div id="shield">Shield [Q]</div>
+            <div id="ultimate">Ultimate [R]</div>
+          </div>
+        </div>
+        <div id="toast"></div>
+      </div>
+      <div id="overlay">
+        <div class="card">
+          <p class="eyebrow">Ashwick Estate</p>
+          <h1>Murder Mystery 2 X</h1>
+          <p id="overlay-copy">
+            A killer is on the grounds. Nobody knows who. Walk the estate, keep your three lives, and trust what you see.
+          </p>
+          <ul class="controls">
+            <li><b>Click</b> look</li>
+            <li><b>WASD</b> walk</li>
+            <li><b>Shift</b> sprint</li>
+            <li><b>LMB / F</b> attack, if you carry one</li>
+            <li><b>Q</b> shield</li>
+            <li><b>R</b> ultimate, sheriff and murderer only</li>
+          </ul>
+          <button id="play" type="button">Enter the estate</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
