@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="flex flex-1 items-center justify-center px-4">
@@ -14,6 +16,7 @@ export default function Home() {
           <a href="https://www.youtube.com/@frankchangshow" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-6 py-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900">YouTube</a>
           <a href="https://www.instagram.com/frankchangshow" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-6 py-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900">Instagram</a>
           <a href="https://www.tiktok.com/@frankchangshow" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-6 py-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900">TikTok</a>
+          <Link href="/build-a-house" className="flex items-center justify-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-6 py-3 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900">Build a House</Link>
         </div>
       </main>
     </div>
